@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!--<html ng-app="ssh2-web">-->
+<html ng-app="">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="AngularJs/angular.js" type="text/javascript"></script>
+    <script src="Socket.io/socket.io-1.2.0.js" type="text/javascript"></script>
+    <script src="javascripts/core.js" type="text/javascript"></script>
+  </head>
+  <body ng-controller="dashboardController">
+  <input type="text" ng-model="command" ng-keydown="exceCommands($event)">
+  <p>{{result}}</p>
+
+  </body>
+</html>
