@@ -12,7 +12,7 @@ var initConnection = function(config,callback){
         callback(conn);
     }).connect({
         host: config.host,
-        port: config.port || 22,
+        port: config.port,
         username: config.username,
         password: config.password
     });
@@ -31,29 +31,22 @@ var execCommands = function (req,res){
         'username':'chenhao',
         'password':'chenhao'
     };
-    var conn_key = hashKey(config);
-    if (conn_pool.hasOwnProperty(conn_key)){
-        exce(conn_pool[conn_key]);
-    }else{
-        initConnection(config,exce(conn));
-    };
-
-    function exce(connection){
+    initConnection(config,function exce(connection){
         connection.exec(commands, function(err, stream) {
             if (err) throw err;
             stream.on('close', function(code, signal) {
                 console.log('Stream :: close :: code: ' + code + ', signal: ' + signal);
-                conn.end();
+                //conn.end();
             }).on('data', function(data) {
                 console.log(data);
                 console.log('----------------');
-                //res.send(data);
+                res.send(data);
 
             }).stderr.on('data', function(data) {
                     console.log('STDERR: ' + data);
                 });
         });
-    }
+    });
 };
 
 exports.execCommands = execCommands;

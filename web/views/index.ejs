@@ -7,10 +7,26 @@
     <script src="AngularJs/angular.js" type="text/javascript"></script>
     <script src="Socket.io/socket.io-1.2.0.js" type="text/javascript"></script>
     <script src="javascripts/core.js" type="text/javascript"></script>
+
   </head>
   <body ng-controller="dashboardController">
-  <input type="text" ng-model="command" ng-keydown="exceCommands($event)">
-  <p>{{result}}</p>
+  <h4>ssh2-web</h4>
+  <div class="header">
+    <div class="input-item">
+      <span>Host : </span>
+      <input type="text">
+    </div>
+    <div class="input-item">
+      <span>Password : </span>
+      <input type="password">
+    </div>
+    <span class="btn-item">连接</span>
 
+  </div>
+  <p class="result">{{result}}</p>
+  <div class="command-line">
+    <span class="username">ssh2-web :</span>
+    <input class="command-input" type="text" autofocus="" ng-model="command" ng-keydown="exceCommands($event)">
+  </div>
   </body>
 </html>

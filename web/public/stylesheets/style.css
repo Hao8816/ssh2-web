@@ -1,8 +1,51 @@
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
 }
 
 a {
   color: #00B7FF;
+}
+
+.header{
+  
+}
+.header .input-item{
+  display: inline-block;
+  padding: 10px 4px;
+}
+
+.btn-item{
+  padding: 2px 15px;
+  display: inline-block;
+  background-color: #ddd;
+  color: #000;
+  cursor: pointer;
+}
+.btn-item:hover{
+  background-color: #ccc;
+}
+
+.result{
+  white-space: pre;
+  line-height: 20px;
+  padding: 5px;
+}
+.command-input{
+  width: 90%;
+  background-color: #000;
+  color: #fff;
+  font-size: 15px;
+  border:none;
+  box-shadow: none;
+  outline: none;
+}
+
+.command-line{
+  display: flex;
+}
+.command-line .username{
+  padding: 6px;
 }
