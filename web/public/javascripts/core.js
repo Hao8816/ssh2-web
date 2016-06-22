@@ -2,7 +2,7 @@
 
 function dashboardController($scope,$http){
 
-    var socket = io('http://127.0.0.1:8088');
+    var socket = io('http://onekoko.com:8089');
     socket.on('connect', function(){
         console.log('连接消息服务器成功');
         // 获取图标初始化数据
