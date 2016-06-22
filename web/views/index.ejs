@@ -25,8 +25,8 @@
   </div>
   <p class="result">{{result}}</p>
   <div class="command-line">
-    <span class="username">ssh2-web :</span>
-    <input class="command-input" type="text" autofocus="" ng-model="command" ng-keydown="exceCommands($event)">
+    <span class="username">{{username}} : {{current_path}} $</span>
+    <input class="command-input" type="text" autofocus="" ng-model="current_command" ng-keydown="exceCommands($event)">
   </div>
   </body>
 </html>
