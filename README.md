@@ -1,8 +1,10 @@
 # ssh2-web
-Provide web page for ssh2
-为ssh2 提供一个web界面
+为ssh2 提供一个web界面(Provide a light-weight web interface for SSH2)
 
-## 依赖于库
+
+项目的演示地址(DEMO) : http://onekoko.com:4000
+
+## 依赖库(Dependency)
 ssh2
 =======
 npm install ssh2
@@ -19,5 +21,5 @@ npm install socket.io
 socket.io http://socket.io/
 
 
-## 版本更新
-### V0.1  添加基本的控制台页面
+## 版本更新(Changes)
+### V0.1  添加基本的控制台页面(Added a page for basic console)
