@@ -10,8 +10,8 @@ conn.on('ready', function() {
 }).connect({
     host: 'onekoko.com',
     port: '22',
-    username: 'chenhao',
-    password: 'chenhao'
+    username: '***',
+    password: '***'
 });
 /*
  * 监听连接
