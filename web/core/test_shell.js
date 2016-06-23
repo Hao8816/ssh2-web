@@ -28,8 +28,8 @@ var execCommands = function (req,res){
     var config = {
         'host':'onekoko.com',
         'port':'22',
-        'username':'chenhao',
-        'password':'chenhao'
+        'username':'***',
+        'password':'***'
     };
     initConnection(config,function exce(connection){
         connection.exec(commands, function(err, stream) {
