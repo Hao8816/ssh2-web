@@ -9,8 +9,8 @@ var KeyBoard = {
 };
 
 // 初始化客户端连接
-//var socket = io('http://onekoko.com:8089');
-var socket = io('http://127.0.0.1:8089');
+var socket = io('http://onekoko.com:8089');
+//var socket = io('http://127.0.0.1:8089');
 
 
 function loginController($rootScope,$scope){
