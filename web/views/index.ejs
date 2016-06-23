@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <!--<html ng-app="ssh2-web">-->
 <html ng-app="">
-  <head>
+<head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
     <script src="AngularJs/angular.js" type="text/javascript"></script>
     <script src="Socket.io/socket.io-1.2.0.js" type="text/javascript"></script>
     <script src="javascripts/core.js" type="text/javascript"></script>
 
-  </head>
-  <body ng-controller="dashboardController">
-  <h4>ssh2-web</h4>
-  <div class="header">
-    <div class="input-item">
-      <span>Host : </span>
-      <input type="text">
-    </div>
-    <div class="input-item">
-      <span>Password : </span>
-      <input type="password">
-    </div>
-    <span class="btn-item">连接</span>
+</head>
+<body>
 
-  </div>
-  <p class="result">{{result}}</p>
-  <div class="command-line">
-    <span class="username">{{username}} : {{current_path}} $</span>
-    <input class="command-input" type="text" autofocus="" ng-model="current_command" ng-keydown="exceCommands($event)">
-  </div>
-  </body>
+<div class="header" ng-controller="loginController">
+    <div class="input-item">
+        <span class="header-title">SSH2-WEB</span>
+    </div>
+    <div class="input-item">
+        <span>Host : </span>
+        <input ng-model="user.host" type="text">
+    </div>
+    <div class="input-item">
+        <span>Username : </span>
+        <input ng-model="user.username" type="text">
+    </div>
+    <div class="input-item">
+        <span>Password : </span>
+        <input ng-model="user.password" type="password">
+    </div>
+    <span class="btn-item" ng-click="login()">连接</span>
+</div>
+<div class="shell-contailer" ng-show="login_success" ng-controller="dashboardController">
+    <p class="result">{{result}}</p>
+
+    <div class="command-line">
+        <span class="username">{{username}} : {{current_path}} $</span>
+        <input class="command-input" type="text" autofocus="" ng-model="current_command"
+               ng-keydown="exceCommands($event)">
+    </div>
+
+</div>
+
+
+</body>
 </html>

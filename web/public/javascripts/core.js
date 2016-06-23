@@ -6,25 +6,45 @@ var KeyBoard = {
     "Enter": 13,
     "Tab" : 9
 
-}
+};
 
-//
-function dashboardController($scope,$http){
-    $scope.current_stack = [];
-    $scope.current_path = $scope.current_stack.join("/");
-    var socket = io('http://onekoko.com:8089');
-    $scope.username = "ssh2-web";
+// 初始化客户端连接
+//var socket = io('http://onekoko.com:8089');
+var socket = io('http://127.0.0.1:8089');
+
+
+function loginController($rootScope,$scope){
+
     socket.on('connect', function(){
         console.log('连接消息服务器成功');
         // 获取图标初始化数据
     });
+
+    $scope.login = function(){
+        socket.emit('login',$scope.user);
+    };
+
+    socket.on('login_success',function(data){
+        $rootScope.login_success = true;
+        $rootScope.username = data['username'];
+        $rootScope.$apply();
+    });
+}
+
+
+//
+function dashboardController($rootScope,$scope){
+    $scope.current_stack = [];
+    $scope.current_path = $scope.current_stack.join("/");
 
     socket.on('std_out',function(data){
         console.log(data);
         $scope.result = data['result'];
         $scope.$apply();
     });
-    socket.on('disconnect', function(){});
+    socket.on('disconnect', function(){
+        $rootScope.login_success = false;
+    });
 
     $scope.exceCommands = function($event){
 

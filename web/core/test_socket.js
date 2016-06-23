@@ -2,25 +2,35 @@ var Server = require('socket.io');
 var io = new Server();
 var Client = require('ssh2').Client;
 var SHA1 = require('sha1');
-var conn = new Client();
 
-conn.on('ready', function() {
-    console.log('ssh连接成功，等待执行命令');
-
-}).connect({
-    host: 'onekoko.com',
-    port: '22',
-    username: '***',
-    password: '***'
-});
 /*
  * 监听连接
  * */
 io.on('connection', function(socket){
 
+    var conn = new Client();
+
     console.log('收到新的连接,连接的ID:', socket.id);
     // 建立连接成功
     socket.emit('connected', { msg: '连接建立成功', code : '001' });
+
+    socket.on('login',function(data){
+        console.log('收到登录数据',data);
+        var host = data["host"];
+        var username = data["username"];
+        var password = data["password"];
+
+        conn.on('ready', function() {
+            console.log('ssh连接成功，等待执行命令');
+            socket.emit('login_success', { msg: '登录success', code : '001', username : username });
+
+        }).connect({
+            host: host,
+            port: '22',
+            username: username,
+            password: password
+        });
+    });
 
     /*                         数据采集相关的事件和函数                            */
     /****************************************************************************/
