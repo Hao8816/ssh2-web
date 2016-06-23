@@ -1,7 +1,8 @@
 # ssh2-web
 为ssh2 提供一个web界面(Provide a light-weight web interface for SSH2)
 
-
+![image](https://github.com/Hao8816/ssh2-web/edit/master/screenshot/index_page.jpg)
+ 
 项目的演示地址(DEMO) : http://onekoko.com:4000
 
 ## 依赖库(Dependency)
