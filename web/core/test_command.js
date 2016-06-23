@@ -18,7 +18,7 @@ conn.on('ready', function() {
 }).connect({
     host: 'onekoko.com',
     port: 22,
-    username: 'chenhao',
-    password: 'chenhao'
+    username: '***',
+    password: '***'
     //privateKey: require('fs').readFileSync('/here/is/my/key')
 });
