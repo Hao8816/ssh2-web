@@ -6,20 +6,20 @@
 项目的演示地址(DEMO) : http://onekoko.com:4000
 
 ## 依赖库(Dependency)
-ssh2
-=======
-npm install ssh2
-ssh2 https://github.com/mscdex/ssh2
+###ssh2
+-------
+> npm install ssh2
+> ssh2 https://github.com/mscdex/ssh2
 
-express
-=======
-npm install express
-express  http://www.expressjs.com.cn/
+###express
+-------
+> npm install express
+> express  http://www.expressjs.com.cn/
 
-socket.io
-=======
-npm install socket.io
-socket.io http://socket.io/
+###socket.io
+-------
+> npm install socket.io
+> socket.io http://socket.io/
 
 
 
