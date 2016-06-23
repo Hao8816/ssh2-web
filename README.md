@@ -21,5 +21,9 @@ npm install socket.io
 socket.io http://socket.io/
 
 
+
+
 ## 版本更新(Changes)
 ### V0.1  添加基本的控制台页面(Added a page for basic console)
+    (1). 添加cd命令的支持， cd /data/  cd .. 等命令
+
